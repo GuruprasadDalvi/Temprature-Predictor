@@ -8,6 +8,7 @@ Layer: [7,7,3,2,1]
 '''
 # Defining Model
 model = nNetwork([7, 7, 3, 2, 1])
+epochs=5
 
 # Loading Data
 x_train = []
@@ -33,8 +34,8 @@ with open("data.txt", "r") as data_file:
             x_test.append([ip])
             y_test.append([op/100])  
 
-#Taining For 3 Epochs                
-for epoch in range(3):
+#Taining For Epochs                
+for epoch in range(epochs):
     cost=0 
     for i in range(len(y_train)):
         model.feedforward(x_train[i])
